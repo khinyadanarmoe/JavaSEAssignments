@@ -1,9 +1,42 @@
-package model;
+package Assignment5.src.model;
 
-public class Vehicle {
+public abstract class Vehicle {
+
+	private String brand;
+	private String model;
+
+	private static int count;
 
 	public Vehicle() {
-		// TODO Auto-generated constructor stub
+
+	}
+
+	public Vehicle(String brand, String model) {
+		this.brand = brand;
+		this.model = model;
+		count++;
+	}
+
+	public abstract void displayInfo();
+
+	public static int getCount() {
+		return count;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public String getModel() {
+		return model;
 	}
 
 }
