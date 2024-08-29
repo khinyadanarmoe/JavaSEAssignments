@@ -1,8 +1,10 @@
-package Assignment5.src.service;
+package Service;
 
 import java.io.IOException;
 
-import Assignment5.src.model.Car;
+import Model.Car;
+
+
 
 public class CarRegistrationSystem extends VehicleRegistrationSystem {
 

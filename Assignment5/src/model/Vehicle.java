@@ -1,4 +1,4 @@
-package Assignment5.src.model;
+package Model;
 
 public abstract class Vehicle {
 

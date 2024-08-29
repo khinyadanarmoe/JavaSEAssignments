@@ -1,15 +1,15 @@
-package Assignment5.src.main;
+package Main;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import Assignment5.src.model.Vehicle;
+import Model.Vehicle;
+import Service.CarRegistrationSystem;
+import Service.MotorcycleRegistrationSystem;
+import Service.TruckRegistrationSystem;
+import Service.VehicleRegistrationSystem;
 
-import Assignment5.src.service.CarRegistrationSystem;
-import Assignment5.src.service.MotorcycleRegistrationSystem;
-import Assignment5.src.service.TruckRegistrationSystem;
-import Assignment5.src.service.VehicleRegistrationSystem;
 
 public class Test {
 
