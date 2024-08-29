@@ -5,8 +5,7 @@ import java.io.IOException;
 import Model.FullTimeEmployee;
 
 
-
-public class FullTimeEmpRegistrationService extends EmployeeRegistrationService {
+public class FulltimeEmpRegistrationService extends EmployeeRegistrationService {
 
 	@Override
 	public FullTimeEmployee employeeInfo() throws IOException {
@@ -23,3 +22,4 @@ public class FullTimeEmpRegistrationService extends EmployeeRegistrationService 
 	}
 	
 }
+

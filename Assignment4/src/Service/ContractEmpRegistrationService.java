@@ -5,7 +5,6 @@ import java.io.IOException;
 import Model.ContractEmployee;
 
 
-
 public class ContractEmpRegistrationService extends EmployeeRegistrationService{
 
 	@Override

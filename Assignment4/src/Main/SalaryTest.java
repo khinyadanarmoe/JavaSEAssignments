@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 import Model.Employee;
 import Service.ContractEmpRegistrationService;
 import Service.EmployeeRegistrationService;
-import Service.FullTimeEmpRegistrationService;
-import Service.PartTimeEmpRegistrationService;
+import Service.FulltimeEmpRegistrationService;
+import Service.ParttimeEmpRegistrationService;
+
 
 public class SalaryTest {
 
@@ -28,10 +29,10 @@ public class SalaryTest {
 				service = new ContractEmpRegistrationService();
 
 			} else if ("fulltime".equalsIgnoreCase(type)) {
-				service = new FullTimeEmpRegistrationService();
+				service = new FulltimeEmpRegistrationService();
 
 			} else if ("parttime".equalsIgnoreCase(type)) {
-				service = new PartTimeEmpRegistrationService();
+				service = new ParttimeEmpRegistrationService();
 			}
 
 			service.getEmployeeInfo();

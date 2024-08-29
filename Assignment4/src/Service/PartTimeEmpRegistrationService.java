@@ -4,7 +4,8 @@ import java.io.IOException;
 
 import Model.PartTimeEmployee;
 
-public class PartTimeEmpRegistrationService extends EmployeeRegistrationService {
+
+public class ParttimeEmpRegistrationService extends EmployeeRegistrationService{
 
 	@Override
 	public PartTimeEmployee employeeInfo() throws IOException {
@@ -14,10 +15,9 @@ public class PartTimeEmpRegistrationService extends EmployeeRegistrationService 
 		System.out.print("Enter Hourly Rate: ");
 		Double hourlyRate = Double.parseDouble(br.readLine());
 
-		PartTimeEmployee parttimeEmp = new PartTimeEmployee(getEmployee().getName(), getEmployee().getBasicSalary(),
-				hoursWorked, hourlyRate);
+		PartTimeEmployee parttimeEmp = new PartTimeEmployee(getEmployee().getName(), getEmployee().getBasicSalary(), hoursWorked, hourlyRate);
 
 		return parttimeEmp;
 	}
-
+	
 }
