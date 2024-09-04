@@ -4,10 +4,10 @@ import Model.Customer;
 
 public class CustomerDao {
 
-	private static Customer[] customerDB = new Customer[10000];
+	private static Customer[] customerDB = new Customer[Customer.Max_Customer_Count];
 	
 	public void create(Customer customer) {
-		customerDB[Customer.getCount()] = customer;
+		customerDB[Customer.getCount()-1] = customer;
 	}
 	
 	public Customer findById(int id) {

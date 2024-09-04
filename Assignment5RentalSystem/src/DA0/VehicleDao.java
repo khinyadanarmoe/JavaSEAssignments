@@ -7,61 +7,47 @@ import Model.Vehicle;
 
 public class VehicleDao {
 
-	private static Vehicle[] vehicleDB = new Vehicle[Vehicle.Max_Vehicle_Count];
+    private static Vehicle[] vehicleDB = new Vehicle[Vehicle.Max_Vehicle_Count];
+    private static int vehicleCount = 0;
 
-	private static int vehicleCount = 0;
+    static {
+        addVehicle(new Car(1, "TOYOTA1", "Sedan", 4, 10000));
+        addVehicle(new Truck(2, "TOYOTA2", "Sedan",555, 10000));
+        addVehicle(new Car(3, "HONDA1", "Sports",6, 10000));
+        addVehicle(new Motorcycle(4, "Mazda1", "Sports", true, 10000));
+        addVehicle(new Car(5, "TOYOTA3", "SUV", 6, 10000));
+        addVehicle(new Car(6, "TOYOTA4", "ABD", 5, 10000));
+        addVehicle(new Truck(7, "HONDA2", "Electric",666, 10000));
+        addVehicle(new Truck(8, "HONDA3", "SUV", 666, 10000));
+        addVehicle(new Car(9, "TOYOTA5", "Sedan", 4, 10000));
+        addVehicle(new Motorcycle(10, "Mazda12", "SUV", false, 10000));
+    }
 
-	static {
+    public static void addVehicle(Vehicle vehicle) {
+        if (vehicleCount < Vehicle.Max_Vehicle_Count) {
+            vehicleDB[vehicleCount] = vehicle;  
+            vehicleCount++; 
+        } else {
+            System.out.println("Can't add more");
+        }
+    }
 
-		addVehicle(new Car("TOYOTA1", "Sedan", 4));
-		addVehicle(new Truck("TOYOTA2", "Sedan", 320.0));
-		addVehicle(new Car("HONDA1", "Sports", 6));
-		addVehicle(new Motorcycle("Mazda1", "Sports", true));
-		addVehicle(new Car("TOYOTA3", "SUV", 5));
-		addVehicle(new Car("TOYOTA4", "ABD", 5));
-		addVehicle(new Truck("HONDA2", "Electric", 80.0));
-		addVehicle(new Truck("HONDA3", "SUV", 750.0));
-		addVehicle(new Car("TOYOTA5", "Sedan", 4));
-		addVehicle(new Motorcycle("Mazda12", "SUV", false));
-	}
+    public static Vehicle findById(int id) {
+        for (int i = 0; i < vehicleCount; i++) {  
+            if (vehicleDB[i].getVehicleId() == id) {
+                return vehicleDB[i];
+            }
+        }
+        return null;
+    }
 
-	public static void addVehicle(Vehicle vehicle) {
-		if (vehicleCount < Vehicle.Max_Vehicle_Count) {
-			vehicleDB[vehicleCount] = vehicle;
-			vehicleCount++;
-		} else {
-			System.out.println("Can't add more");
-		}
-	}
+    public static void displayAllVehicle() {
+        for (int i = 0; i < vehicleCount; i++) {  
+            vehicleDB[i].displayInfo();
+            System.out.println("Vehicle ID: " + vehicleDB[i].getVehicleId());
+        }
+    }
 
-	public void delete(Vehicle vehicle) {
-
-	}
-
-	public void update(Vehicle vehicle) {
-
-	}
-
-	public static Vehicle[] getAll() {
-		return vehicleDB;
-	}
-
-	public static Vehicle findById(int id) {
-
-		for (int i = 0; i < Vehicle.getCount(); i++) {
-			if (vehicleDB[i].getId() == id) {
-				return vehicleDB[i];
-			}
-		}
-
-		return null;
-	}
-
-	public static void displayAllVehicle() {
-		for (int i = 0; i < vehicleCount; i++) {
-			getAll()[i].displayInfo();
-		}
-
-	}
-
+  
 }
+

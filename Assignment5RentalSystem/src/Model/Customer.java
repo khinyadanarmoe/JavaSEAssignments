@@ -2,6 +2,7 @@ package Model;
 
 public class Customer {
 	
+	public static final int Max_Customer_Count = 10000;
 	private int id;
 	private String name;
 	private static int customerCount = 0;

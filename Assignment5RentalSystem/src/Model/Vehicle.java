@@ -1,46 +1,31 @@
 package Model;
 
 public class Vehicle {
-	
+
 	public static final int Max_Vehicle_Count = 1000;
 
 	private String brand;
 	private String model;
 	private double rentalPrice;
-
 	private int id;
-
-	private static int count = 0;
 
 	public Vehicle(Vehicle vehicle) {
 		this.brand = vehicle.getBrand();
 		this.model = vehicle.getModel();
 
-		
 	}
 
-	public Vehicle(String brand, String model) {
+	public Vehicle(int id, String brand, String model, double rentalPrice) {
 		this.brand = brand;
 		this.model = model;
-		count++;
-		id = getCount();
-//		System.out.println(id);
-	}
-	
-	public Vehicle(String brand, String model, double rentalPrice) {
-		this.brand = brand;
-		this.model = model;
-		this.setRentalPrice(rentalPrice);
+		this.id = id;
+		this.rentalPrice = rentalPrice;
 
 	}
 
 	public void displayInfo() {
-		System.out.println("Vehicle brand name = "+ this.brand);
-        System.out.println("Vehicle model = "+ this.model);
-	}
-
-	public static int getCount() {
-		return count;
+		System.out.println("Vehicle brand name = " + this.brand);
+		System.out.println("Vehicle model = " + this.model);
 	}
 
 	public String getBrand() {
@@ -59,7 +44,6 @@ public class Vehicle {
 		this.model = model;
 	}
 
-
 	public double getRentalPrice() {
 		return rentalPrice;
 	}
@@ -68,12 +52,8 @@ public class Vehicle {
 		this.rentalPrice = rentalPrice;
 	}
 
-	public int getId() {
-
+	public int getVehicleId() {
 		return id;
 	}
-
-
-
 
 }

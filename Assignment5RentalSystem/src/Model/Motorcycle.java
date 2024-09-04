@@ -4,15 +4,16 @@ public class Motorcycle extends Vehicle {
 
 	private boolean hasSidecar;
 
-	public Motorcycle(Vehicle vehicle, boolean hasSidecar) {
+	public Motorcycle( Vehicle vehicle, boolean hasSidecar) {
 		super(vehicle);
 		this.hasSidecar = hasSidecar;
 	}
 
-	public Motorcycle(String brand, String model, boolean hasSidecar) {
-		super(brand, model);
+	public Motorcycle(int id, String brand, String model, boolean hasSidecar, double rentPrice) {
+		super(id, brand, model, rentPrice);
 		this.hasSidecar = hasSidecar;
 	}
+	
 
 	@Override
 	public void displayInfo() {

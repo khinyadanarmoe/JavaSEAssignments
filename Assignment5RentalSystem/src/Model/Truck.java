@@ -9,16 +9,11 @@ public class Truck extends Vehicle {
 		this.payloadCapacity = payloadCap;
 	}
 
-	public Truck(String brand, String model, double payloadCap) {
-		super(brand, model);
+	public Truck(int id, String brand, String model, double payloadCap, double rentPrice) {
+		super(id, brand, model, rentPrice);
 		this.payloadCapacity = payloadCap;
 	}
-	
-	public Truck(String brand, String model, double payloadCap, double rentalPrice) {
-		super(brand, model);
-		this.payloadCapacity = payloadCap;
-		this.setRentalPrice(rentalPrice);
-	}
+
 	
 
 	@Override

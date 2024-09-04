@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 import DA0.CustomerDao;
 import Model.Customer;
 
-public class CustomerRegistrationSystem {
+public class CustomerRegistrationService {
 
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	private CustomerDao customerDao;
 
-	public CustomerRegistrationSystem() {
+	public CustomerRegistrationService() {
 		customerDao = new CustomerDao();
 	}
 
@@ -23,7 +23,8 @@ public class CustomerRegistrationSystem {
 		Customer customer = new Customer(name);
 
 		customerDao.create(customer);
-
 		return customer;
 	}
+
+
 }

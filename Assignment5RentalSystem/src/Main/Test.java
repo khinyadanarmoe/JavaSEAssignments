@@ -8,76 +8,77 @@ import DA0.CustomerDao;
 import DA0.RentalDao;
 import DA0.VehicleDao;
 import Model.Vehicle;
-import Service.CarRegistrationSystem;
-import Service.MotorcycleRegistrationSystem;
-import Service.RentalRegistrationSystem;
-import Service.TruckRegistrationSystem;
-import Service.VehicleRegistrationSystem;
+import Service.CarRegistrationService;
+import Service.MotorcycleRegistrationService;
+import Service.RentalRegistrationService;
+import Service.TruckRegistrationService;
+import Service.VehicleRegistrationService;
 
 public class Test {
 
 	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	private static Vehicle vehicle;
 
 	public static void main(String[] args) throws IOException {
 
 		// RentalService
-		
-		RentalRegistrationSystem rentalService = new RentalRegistrationSystem();
-//		VehicleRegistrationSystem service = new VehicleRegistrationSystem();
-//
-//		String addCustomer;
-//		do {
-//
-////			System.out.print("Enter Vehicle Type (Car/Truck/Motorcycle): ");
-////			String type = br.readLine();
-////			if (type.equalsIgnoreCase("Car")) {
-////				service = new CarRegistrationSystem();
-////			} else if (type.equalsIgnoreCase("Truck")) {
-////				service = new TruckRegistrationSystem();
-////			} else if (type.equalsIgnoreCase("Motorcycle")) {
-////				service = new MotorcycleRegistrationSystem();
-////			}
-////			
-////			service.getRegisterInfo();
-//			rentalService.getRentInfo();
-//
-//			System.out.print("Do you want to add more customer: ");
-//			addCustomer = br.readLine();
-//
-//		} while (addCustomer.equalsIgnoreCase("yes"));
-//		RentalDao.displayAllRental();
-//		
-//		
-		//RentByVehicleId
-		String flag;
+
+		RentalRegistrationService rentalService = new RentalRegistrationService();
+		VehicleRegistrationService service = new VehicleRegistrationService();
+
+		String addCustomer;
 		do {
 
-			rentalService.rentById();
-	
+			System.out.print("Enter Vehicle Type (Car/Truck/Motorcycle): ");
+			String type = br.readLine();
+			if (type.equalsIgnoreCase("Car")) {
+				service = new CarRegistrationService();
+			} else if (type.equalsIgnoreCase("Truck")) {
+				service = new TruckRegistrationService();
+			} else if (type.equalsIgnoreCase("Motorcycle")) {
+				service = new MotorcycleRegistrationService();
+			}
+
+			rentalService.getRentInfo();
+
 			System.out.print("Do you want to add more customer: ");
-			flag = br.readLine();
+			addCustomer = br.readLine();
 
-		} while (flag.equalsIgnoreCase("yes"));
+		} while (addCustomer.equalsIgnoreCase("yes"));
 		RentalDao.displayAllRental();
-
 	}
+//		
+//		
+	// RentByVehicleId
+//		String flag;
+//		do {
+//
+//			rentalService.rentById();
+//	
+//			System.out.print("Do you want to add more customer: ");
+//			flag = br.readLine();
+//
+//		} while (flag.equalsIgnoreCase("yes"));
+//		RentalDao.displayAllRental();
+//	
+//	}
 
-	// VehicleRegistration
+//	 VehicleRegistration
 
 //	public static void main(String[] args) throws IOException {
 //		String type;
 //		String flag;
-//		VehicleRegistrationSystem service = new VehicleRegistrationSystem();
+//		VehicleRegistrationService service = new VehicleRegistrationService();
 //
 //		do {
 //			System.out.print("Enter Vehicle Type (Car/Truck/Motorcycle): ");
 //			type = br.readLine();
 //			if (type.equalsIgnoreCase("Car")) {
-//				service = new CarRegistrationSystem();
+//				service = new CarRegistrationService();
 //			} else if (type.equalsIgnoreCase("Truck")) {
-//				service = new TruckRegistrationSystem();
+//				service = new TruckRegistrationService();
 //			} else if (type.equalsIgnoreCase("Motorcycle")) {
-//				service = new MotorcycleRegistrationSystem();
+//				service = new MotorcycleRegistrationService();
 //			}
 //
 //			service.getVehicleInfo();
