@@ -14,9 +14,12 @@ public class Str2IntConversion {
 			return 0;
 		}
 		else {
-			int digit = (int) str.charAt(0);
+			int digit = (int) str.charAt(0) - '0';
+			digit = digit * (int)Math.pow(10, str.length()-1);
+			
+			return digit + stringToInt(str.substring(1));
 		}
-		return 0;
+		
 
 		
 
