@@ -2,7 +2,6 @@ package DA0;
 
 import Model.Car;
 import Model.Motorcycle;
-import Model.Rental;
 import Model.Truck;
 import Model.Vehicle;
 
